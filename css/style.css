@@ -127,6 +127,11 @@ p:not([class]):not(:last-child) {
   padding-inline: var(--container-padding-x);
 }
 
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
 .title-medium {
   font-size: clamp 20px, 2.08vw, 40px;
   line-height: 1.3;
@@ -161,15 +166,16 @@ p:not([class]):not(:last-child) {
   content: attr(data-title);
   position: absolute;
   z-index: -1;
-  top: -0.5em;
+  top: -0.3em;
   left: -0.9em;
   font-family: var(--font-famili-accent);
   font-size: 2.8em;
+  line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px var(--color-dark-gray);
 }
 .backdrop-title.centered::after {
-  top: -0.65em;
+  top: -0.25em;
   left: 50%;
   translate: -50%;
 }
@@ -429,6 +435,10 @@ p:not([class]):not(:last-child) {
   font-size: 16px;
 }
 
+.join-us {
+  background-color: var(--color-dark-alternate);
+}
+
 .join-us-video-wrapper {
   position: relative;
   display: flex;
@@ -522,6 +532,56 @@ p:not([class]):not(:last-child) {
   max-width: 400px;
 }
 
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.location-map-imgage {
+  height: auto;
+}
+
+.location-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 15px;
+  text-align: center;
+}
+
+.location-title:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.location-discription {
+  max-width: 490px;
+}
+.location-discription:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.family {
+  color: var(--color-dark-alternate);
+}
+
+.family-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  padding-top: 165px;
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+.family-body {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  overflow-x: hidden;
+}
+
 @media (max-width: 1919px) {
   .motivation-card-img {
     margin-block: -20px;
@@ -565,6 +625,19 @@ p:not([class]):not(:last-child) {
   }
   .join-us-title:not(:last-child) {
     margin-bottom: 80px;
+  }
+  .location {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .location-body {
+    padding-block: 40px;
+  }
+  .location-discription:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .family-images {
+    height: 360px;
   }
 }
 @media (max-width: 767px) {
@@ -627,5 +700,15 @@ p:not([class]):not(:last-child) {
   }
   .join-us-video-play-button {
     width: 140px;
+  }
+  .family-header {
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+  .family-body {
+    column-gap: 12px;
+  }
+  .family-images {
+    height: 180px;
   }
 }
