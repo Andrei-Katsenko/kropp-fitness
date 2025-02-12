@@ -1,4 +1,41 @@
 
+class Header {
+
+	selectors = {
+		root: '[data-js-header]',
+		overlay: '[data-js-header-overlay]',
+		burgerButton: '[data-js-header-burger-button]'
+
+	}
+
+	stateClasses = {
+		isActive: 'is-active',
+		isLock: 'is-lock'
+	}
+
+	constructor() {
+		this.rootElement = document.querySelector(this.selectors.root)
+		this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
+		this.burgerButtonElement = this.rootElement.querySelector(this.selectors.burgerButton)
+		this.bindEvents()
+	}
+
+	burgerButtonOnClick = () => {
+		this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
+		this.overlayElement.classList.toggle(this.stateClasses.isActive)
+		document.documentElement.classList.toggle(this.stateClasses.isLock)
+	}
+
+	bindEvents() {
+		this.burgerButtonElement.addEventListener('click', this.burgerButtonOnClick)
+	}
+
+}
+
+// burger-menu
+new Header()
+
+
 // Carousel banner section
 
 let slides = document.querySelectorAll(".banner-slide");
@@ -74,3 +111,39 @@ addPagination();
 setInterval(nextSlide, 7000);
 // btnNext.addEventListener("click", nextSlide);
 // btnPrev.addEventListener("click", prevSlide);
+
+// ToTop button
+document.addEventListener("DOMContentLoaded", function () {
+	const gototop = document.querySelector(".to-top");
+	const root = document.documentElement;
+
+	window.addEventListener("scroll", () => {
+		if (window.scrollY >= 500) {
+			gototop.classList.add("to-top-view");
+		} else {
+			gototop.classList.remove("to-top-view");
+		}
+	});
+
+	gototop.addEventListener("click", () => {
+		scrollToTop(700);
+	});
+
+	function scrollToTop(duration) {
+		const start = root.scrollTop;
+		const startTime = performance.now();
+
+		function animateScroll(currentTime) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+			root.scrollTop = start * (1 - progress);
+
+			if (progress < 1) {
+				requestAnimationFrame(animateScroll);
+			}
+		}
+
+		requestAnimationFrame(animateScroll);
+	}
+});
+

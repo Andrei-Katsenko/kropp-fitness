@@ -8,63 +8,54 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Kropp Fitness</title>
 	<link rel="stylesheet" href="css/style.css">
-</head>
+
 
 <body>
 
-	<header class="header">
-		<div class="header-body">
+	<button class="to-top"></button>
 
-			<a class="header-logo" href="/">
-				<img class="header-logo-image" src="./images/logo.png" alt="Kropp Logo" width="135" height="25"
-					loading="lazy" />
-			</a>
+	<header class="header" data-js-header>
 
-			<button class="header-burger-button">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+		<div class="header__body">
+			<div class="header__body-inner container">
+				<a href="" class="header__logo logo">
+					<img class="header-logo-image" src="./images/logo.png" alt="Kropp Logo" width="135" height="25"
+						loading="lazy" />
+				</a>
 
-			<nav class="header-menu">
-				<ul class="header-menu-list">
-					<li class="header-menu-item">
-						<a class="header-menu-link is-current" href="/">Home</a>
-					</li>
-					<li class="header-menu-item">
-						<a class="header-menu-link" href="/">Pages</a>
-					</li>
-					<li class="header-menu-item">
-						<a class="header-menu-link" href="/">Portfolio</a>
-					</li>
-					<li class="header-menu-item">
-						<a class="header-menu-link" href="/">Blog</a>
-					</li>
-					<li class="header-menu-item">
-						<a class="header-menu-link" href="/">Shop</a>
-					</li>
-				</ul>
-			</nav>
+				<div class="header__overlay" data-js-header-overlay>
+					<nav class="header__menu">
+						<ul class="header__menu-list">
+							<li class="header__menu-item">
+								<a class="header__menu-link is-current" href="/">Home</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="/">Pages</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="/">Portfolio</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="/">Blog</a>
+							</li>
+							<li class="header__menu-item">
+								<a class="header__menu-link" href="/">Shop</a>
+							</li>
+						</ul>
+					</nav>
 
-			<div class="header-actions">
-				<button class="header-book-button button" type="button">
-					Book now
+					<button class="header-book-button button" type="button"> Book now</button>
+
+				</div>
+
+				<button class="burger-button visible-mobile" type="button" data-js-header-burger-button>
+					<span class="burger-button__line"></span>
+					<span class="burger-button__line"></span>
+					<span class="burger-button__line"></span>
 				</button>
-				<!-- <button class="header-burger-button" type="button" title="Open menu">
-			<i></i>
-
-			<div class="header-burger-button-icon">
-				<span class="visually-hidden">Open menu</span>
-				<span class="header-burger-button-line"></span>
-				<span class="header-burger-button-line"></span>
-				<span class="header-burger-button-line"></span>
-			</div>
-
-		</button> -->
 			</div>
 
 		</div>
-
 
 	</header>
 
@@ -489,8 +480,9 @@
 		</div>
 	</footer>
 
-	<script src="js/script.js"></script>
 
+	<script src="js/script.js"></script>
+	</head>
 </body>
 
 </html>
